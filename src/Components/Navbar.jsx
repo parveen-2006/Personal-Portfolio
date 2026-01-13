@@ -8,7 +8,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         
         {/* Logo / Name */}
-        <h1 className="text-xl font-semibold text-white">
+        <h1 className="text-2xl font-semibold text-white">
           Parveen
         </h1>
 
