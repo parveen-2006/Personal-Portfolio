@@ -23,23 +23,32 @@ const skills3 = [
 
 const Row = ({ images, reverse = false }) => {
   return (
-    <div className="relative overflow-hidden py-6">
+    <div className="relative overflow-hidden py-4 sm:py-6">
       
-      {/* Edge fade */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-black to-transparent z-10" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-black to-transparent z-10" />
+      {/* Responsive fade */}
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-24 bg-gradient-to-r from-black to-transparent z-10" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-24 bg-gradient-to-l from-black to-transparent z-10" />
 
       <div
-        className={`flex w-max gap-14 ${
+        className={`flex w-max gap-6 sm:gap-10 md:gap-14 ${
           reverse ? "animate-scroll-reverse" : "animate-scroll"
         }`}
       >
-        {[...images, ...images, ...images , ...images].map((img, i) => (
+        {/* only duplicate 2x (important) */}
+        {[...images, ...images].map((img, i) => (
           <img
             key={i}
             src={img}
             alt="skill"
-            className="h-16 w-16 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
+            className="
+              h-10 w-10 
+              sm:h-14 sm:w-14 
+              md:h-16 md:w-16 
+              object-contain 
+              grayscale hover:grayscale-0 
+              hover:scale-110 
+              transition duration-300
+            "
           />
         ))}
       </div>
