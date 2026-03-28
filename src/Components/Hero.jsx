@@ -1,14 +1,21 @@
 import { motion } from "framer-motion";
-import img from "../assets/portfolio2.jpeg";
 
 const Hero = () => {
   return (
-    <section
-      id="home"
-      className="min-h-screen flex items-center bg-black text-white bg-no-repeat  bg-cover bg-center "
-      style={{backgroundImage : `url("https://images.unsplash.com/photo-1487088678257-3a541e6e3922?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGhlcm8lMjBpbWFnZXxlbnwwfHwwfHx8MA%3D%3D")`}}
-    >
-      <div className="max-w-7xl mx-auto px-6 pt-24">
+<section
+  id="home"
+  className="relative min-h-screen flex items-center text-white overflow-hidden bg-black"
+>
+  {/* 🔵 Strong Blue Glow */}
+  <div className="absolute inset-0">
+    <div className="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[900px] h-[900px] bg-blue-600 opacity-40 blur-[200px]" />
+  </div>
+
+  {/* ⚫ Dark overlay (controls intensity) */}
+  <div className="absolute inset-0 bg-black/80" />
+
+  {/* Content */}
+  <div className="relative max-w-7xl mx-auto px-6 pt-24">
         
         <motion.div
           initial={{ opacity: 0, y: 20 }}
