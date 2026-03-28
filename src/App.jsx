@@ -3,6 +3,7 @@ import Navbar from './Components/Navbar'
 import Hero from './Components/Hero'
 import About from './Components/About'
 import Projects from './Components/Projects'
+import Skills from './Components/SkillsSection'
 
 export default function App() {
   return (
@@ -10,6 +11,7 @@ export default function App() {
       <Navbar/>
       <Hero/>
       <About/>
+      <Skills/>
       <Projects/>
     </div>
   )
