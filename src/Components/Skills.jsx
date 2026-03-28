@@ -1,48 +1,59 @@
-import { motion } from "framer-motion";
+import React from "react";
+
+const skills1 = [
+  "/skills/html.png",
+  "/skills/css.png",
+  "/skills/js.png",
+  "/skills/react.png",
+];
+
+const skills2 = [
+  "/skills/node.png",
+  "/skills/mongodb.png",
+  "/skills/express.png",
+  "/skills/git.png",
+];
+
+const skills3 = [
+  "/skills/tailwind.png",
+  "/skills/mysql.png",
+  "/skills/github.png",
+  "/skills/postman.png",
+];
+
+const Row = ({ images, reverse = false }) => {
+  return (
+    <div className="relative overflow-hidden py-5">
+      
+      {/* Fade effect (left + right) */}
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-black to-transparent z-10" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-black to-transparent z-10" />
+
+      <div
+        className={`flex w-max gap-12 ${
+          reverse ? "animate-scroll-reverse" : "animate-scroll"
+        }`}
+      >
+        {[...images, ...images].map((img, i) => (
+          <img
+            key={i}
+            src={img}
+            alt="skill"
+            className="h-16 w-16 object-contain grayscale hover:grayscale-0 transition duration-300"
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const Skills = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.2 }}
-      viewport={{ once: true }}
-      className="mt-12"
-    >
-      <h3 className="text-2xl font-semibold mb-6">
-        Skills & <span className="text-blue-500">Tools</span>
-      </h3>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-gray-300">
-        
-        <div>
-          <h4 className="font-medium text-white mb-2">Frontend</h4>
-          <ul className="space-y-1">
-            <li>HTML, CSS, JavaScript</li>
-            <li>React.js</li>
-            <li>Tailwind CSS</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="font-medium text-white mb-2">Backend (Basics)</h4>
-          <ul className="space-y-1">
-            <li>Node.js</li>
-            <li>Express.js</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="font-medium text-white mb-2">Tools</h4>
-          <ul className="space-y-1">
-            <li>Git & GitHub</li>
-            <li>VS Code</li>
-            <li>Postman</li>
-          </ul>
-        </div>
-
-      </div>
-    </motion.div>
+    <div className="bg-black py-16">
+      <Row images={skills1} />
+      <Row images={skills2} reverse />
+      <Row images={skills3} />
+    </div>
   );
 };
 

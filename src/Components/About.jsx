@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Skills from "./Skills";
 
 const skills = [
   "HTML",
@@ -48,22 +49,7 @@ const About = () => {
           </div>
 
           {/* Right Content – Skills */}
-          <div>
-            <h3 className="text-xl font-semibold mb-4">
-              Tech <span className="text-blue-500">Stack</span>
-            </h3>
-
-            <div className="flex flex-wrap gap-3">
-              {skills.map((skill, index) => (
-                <span
-                  key={index}
-                  className="px-4 py-2 border border-gray-700 rounded-full text-sm text-gray-300 hover:border-blue-500 hover:text-blue-500 transition"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
+            <Skills/>
 
         </motion.div>
       </div>

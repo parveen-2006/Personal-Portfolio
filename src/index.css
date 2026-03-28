@@ -1,1 +1,28 @@
 @import "tailwindcss";
+/* smoother animation using GPU */
+@keyframes scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes scroll-reverse {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* slightly faster + smoother */
+.animate-scroll {
+  animation: scroll 14s linear infinite;
+}
+
+.animate-scroll-reverse {
+  animation: scroll-reverse 14s linear infinite;
+}

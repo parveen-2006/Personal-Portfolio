@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
+import img from "../assets/portfolio2.jpeg";
 
 const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center bg-black text-white"
+      className="min-h-screen flex items-center bg-black text-white bg-no-repeat  bg-cover bg-center "
+      style={{backgroundImage : `url("https://images.unsplash.com/photo-1487088678257-3a541e6e3922?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGhlcm8lMjBpbWFnZXxlbnwwfHwwfHx8MA%3D%3D")`}}
     >
       <div className="max-w-7xl mx-auto px-6 pt-24">
         
